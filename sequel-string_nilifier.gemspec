@@ -6,8 +6,8 @@ require 'sequel/plugins/string_nilifier/version'
 Gem::Specification.new do |spec|
   spec.name          = "sequel-string_nilifier"
   spec.version       = Sequel::Plugins::StringNilifier::VERSION
-  spec.authors       = ["Jonathan Tron"]
-  spec.email         = ["jonathan@tron.name"]
+  spec.authors       = ["Jonathan Tron", "Joseph Halter"]
+  spec.email         = ["jonathan.tron@metrilio.com", "joseph.halter@metrilio.com"]
   spec.description   = %q{Sequel plugin to store empty string as nil}
   spec.summary       = spec.description
   spec.homepage      = ""
