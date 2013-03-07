@@ -14,10 +14,11 @@ module Sequel
           super
         end
 
-        # Set blob columns as skipping stripping when plugin is loaded.
+        # Set blob columns as skipping nilifying when plugin is loaded.
         def set_dataset(*)
-          super
+          res = super
           set_skipped_string_nilifying_columns
+          res
         end
 
         # Skip nilifying for the given columns.
@@ -32,7 +33,7 @@ module Sequel
 
         private
 
-        # Automatically skip stripping of blob columns
+        # Automatically skip nilifying of blob columns
         def set_skipped_string_nilifying_columns
           if @db_schema
             blob_columns = @db_schema.map{|k,v| k if v[:type] == :blob}.compact
@@ -43,7 +44,7 @@ module Sequel
 
       module InstanceMethods
         # Strip value if it is a non-blob string and the model hasn't been set
-        # to skip stripping for the column, before attempting to assign
+        # to skip nilifying for the column, before attempting to assign
         # it to the model's values.
         def nil_string?(k,str)
           str.is_a?(String) && !str.is_a?(SQL::Blob) && str.strip.empty? && !model.skip_string_nilifying?(k)
