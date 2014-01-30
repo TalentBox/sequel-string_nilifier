@@ -1,6 +1,8 @@
 # Sequel::StringNilifier
 
-Sequel plugin to convert empty string to nil. 
+[![Build Status](https://travis-ci.org/TalentBox/sequel-string_nilifier.png?branch=master)](https://travis-ci.org/TalentBox/sequel-string_nilifier)
+
+Sequel plugin to convert empty string to nil.
 Adapted from `Sequel::Plugins::StringStripper` from Jeremy Evans.
 
 ## Installation
