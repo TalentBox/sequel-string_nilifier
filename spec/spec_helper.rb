@@ -16,7 +16,9 @@ class << Sequel::Model
 end
 
 Sequel::Model.use_transactions = false
-Sequel.cache_anonymous_models = false
+if Sequel.respond_to? :cache_anonymous_models=
+  Sequel.cache_anonymous_models = false
+end
 
 db = Sequel.mock(:fetch=>{:id => 1, :x => 1}, :numrows=>1, :autoid=>proc{|sql| 10})
 def db.schema(*) [[:id, {:primary_key=>true}]] end
