@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jonathan.tron@metrilio.com", "joseph.halter@metrilio.com"]
   spec.description   = %q{Sequel plugin to store empty string as nil}
   spec.summary       = spec.description
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/TalentBox/sequel-string_nilifier"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
